@@ -3,13 +3,13 @@ package NimMainFiles;
 
 public class HumanPlayer implements Player
 {
-    public int move()
+    public int move(int numberOfMarblesTaken)
     {
-        return 0;
+        return numberOfMarblesTaken;
     }
     
     public String getName()
     {
-        return "";
+        return "Human player";
     }
 }
