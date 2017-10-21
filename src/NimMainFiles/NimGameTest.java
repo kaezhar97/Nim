@@ -15,17 +15,26 @@ public class NimGameTest
         SmartComputer superComputer=new SmartComputer();
         StupidComputer dumbComputer=new StupidComputer();
         
-        String input=JOptionPane.showInputDialog("Would you like to play against \n1-Stupid computer\nSmart computer\nType 1 or 2");
-        Scanner scan=new Scanner(input);
-        int answer=scan.nextInt();
+        String input;
+        Scanner scan;
+        int answer;
+        
+        do 
+        {
+         input=JOptionPane.showInputDialog("Would you like to play against \n1-Stupid computer\n2-Smart computer\nType 1 or 2");
+         scan=new Scanner(input);
+         answer=scan.nextInt();
+        }while((answer!=1)&&(answer!=2));
         
         if(answer==1)
         {
-           Nim nimGame=new Nim(theHuman,dumbComputer,gamePile); 
+           Nim nimGame=new Nim(theHuman,dumbComputer,gamePile);
+           System.out.println(nimGame.play());
         }
         else
         {
-            Nim nimGame=new Nim(theHuman,superComputer,gamePile); 
+            Nim nimGame=new Nim(theHuman,superComputer,gamePile);
+            System.out.println(nimGame.play());
         }
         
     }
