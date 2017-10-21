@@ -23,7 +23,11 @@ public class Nim
     
     public String play()
     {
-        System.out.println("The starting pile has "+thePile.getSize()+" marbles");
+        System.out.println("\n------------------Starting new game------------------\n"
+                + "");
+        System.out.println("The starting pile has "+thePile.getSize()+" marbles\n");
+       
+        
         String winner="";
         int marblesRemoved=0;
         
@@ -40,24 +44,31 @@ public class Nim
             
             thePile.removeMarbles(marblesRemoved);
             System.out.println(myPlayers[i].getName()+" has removed "+marblesRemoved+" marbles from the pile");
-            System.out.println("There are now "+thePile.getSize()+" marbles left in the pile");
+            System.out.println("There are now "+thePile.getSize()+" marbles left in the pile\n");
             
-            if (i==myPlayers.length-1&&thePile.getSize()>1)
+            
+            if (thePile.getSize()==1)
+            {
+                winner=myPlayers[i].getName();
+                break;
+            }
+            
+            else if (i==myPlayers.length-1&&thePile.getSize()>1)
             {
                 i=-1;
             }
-            else if (thePile.getSize()==1)
-            {
-                winner=myPlayers[i].getName();
-            }
+            
         }
         
-        return winner + " has won!";
+        gameOver(true);
+        
+        return winner + " has won!" + "\n\nGAME OVER"
+                + "";
     }
     
-    public int getPileSize()
+    public boolean gameOver(boolean isOver)
     {
-        return thePile.getSize();
+        return isOver;
     }
     
     

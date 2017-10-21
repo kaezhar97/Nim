@@ -9,7 +9,7 @@ public class NimGameTest
     public static void main (String args[])
     {
        
-
+   
         
         HumanPlayer theHuman=new HumanPlayer();
         SmartComputer superComputer=new SmartComputer();
@@ -17,59 +17,74 @@ public class NimGameTest
         
         String input;
         Scanner scan;
-        int answer;
+        String answer;
+        String playAgain;
         
+      do
+      {
         do 
         {
          input=JOptionPane.showInputDialog("Would you like to play against \n1-Stupid computer\n2-Smart computer\nType 1 or 2");
          scan=new Scanner(input);
-         answer=scan.nextInt();
-        }while((answer!=1)&&(answer!=2));
+         answer=scan.next();
+        }while(!(answer.equals("1"))&&!(answer.equals("2")));
         
         
-        int order;
+        
         String theInput;
         Scanner scanOrder;
-        int firstOrSecond;
+        String firstOrSecond;
         
         theInput=JOptionPane.showInputDialog("Would you like to go first or second.\nType 1 or 2");
         scanOrder=new Scanner(theInput);
-        firstOrSecond=scanOrder.nextInt();
+        firstOrSecond=scanOrder.next();
         
-        while(firstOrSecond!=1&&firstOrSecond!=2)
+        while( !(firstOrSecond.equals("1")) && !(firstOrSecond.equals("2")) )
         {
             theInput=JOptionPane.showInputDialog("Please only type 1 or 2.\nWould you like to go first or second");
             scanOrder=new Scanner(theInput);
-            firstOrSecond=scanOrder.nextInt();
+            firstOrSecond=scanOrder.next();
         }
         
-        if(answer==1&&firstOrSecond==1)
+        if((answer.equals("1"))&&(firstOrSecond.equals("1")))
         {
            Player[] thePlayers= {theHuman, dumbComputer};
            Nim nimGame = new Nim (thePlayers);
            
            System.out.println(nimGame.play());
         }
-        else if(answer==1&&firstOrSecond==2)
+        else if((answer.equals("1"))&&(firstOrSecond.equals("2")))
         {
             Player[] thePlayers= {dumbComputer, theHuman};
             Nim nimGame = new Nim (thePlayers);
             
             System.out.println(nimGame.play()); 
         }
-        else if(answer==2&&firstOrSecond==1)
+        else if((answer.equals("2"))&&(firstOrSecond.equals("1")))
         {
             Player[] thePlayers= {theHuman, superComputer};
             Nim nimGame = new Nim (thePlayers);
             System.out.println(nimGame.play()); 
         }
-         else if(answer==2&&firstOrSecond==2)
+         else if((answer.equals("2"))&&(firstOrSecond.equals("2")))
         {
              Player[] thePlayers= {superComputer, theHuman};
              Nim nimGame = new Nim (thePlayers);
              System.out.println(nimGame.play());    
         }
         
+        input=JOptionPane.showInputDialog("Would you like to play another game.\nType y or n");
+        scan=new Scanner (input);
+        playAgain=scan.next();
         
+        while (!(playAgain.toLowerCase().equals("y")) && !(playAgain.toLowerCase().equals("n")))
+        {
+            input=JOptionPane.showInputDialog("Invalid input. Please only type either a 'y' or an 'n'.\nWould you like to play another game");
+            scan=new Scanner (input);
+            playAgain=scan.next();           
+        }
+         
+      }while(playAgain.toLowerCase().equals("y")); 
+      
     }
 }

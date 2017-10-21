@@ -13,34 +13,34 @@ public class SmartComputer implements Player
     {
       
         
-        if (Pile.getSize()<=100&&Pile.getSize()>=64)
+        if (marblesLeftInPile<=100&&marblesLeftInPile>=64)
         {
-           numberOfMarblesTaken=Pile.getSize()-63;
+           numberOfMarblesTaken=marblesLeftInPile-63;
    
         }
-        else if (Pile.getSize()<=63&&Pile.getSize()>=32)
+        else if (marblesLeftInPile<=63&&marblesLeftInPile>=32)
         {
-           numberOfMarblesTaken=Pile.getSize()-31;
+           numberOfMarblesTaken=marblesLeftInPile-31;
           
         }
-        else if (Pile.getSize()<=31&&Pile.getSize()>=16)
+        else if (marblesLeftInPile<=31&&marblesLeftInPile>=16)
         {
-           numberOfMarblesTaken=Pile.getSize()-15;
+           numberOfMarblesTaken=marblesLeftInPile-15;
            
         }
-        else if (Pile.getSize()<=15&&Pile.getSize()>=8)
+        else if (marblesLeftInPile<=15&&marblesLeftInPile>=8)
         {
-           numberOfMarblesTaken=Pile.getSize()-7;
+           numberOfMarblesTaken=marblesLeftInPile-7;
            
         }
-        else if (Pile.getSize()<=7&&Pile.getSize()>=4)
+        else if (marblesLeftInPile<=7&&marblesLeftInPile>=4)
         {
-           numberOfMarblesTaken=Pile.getSize()-3;
+           numberOfMarblesTaken=marblesLeftInPile-3;
            
         }
-        else if (Pile.getSize()<=3&&Pile.getSize()>=2)
+        else if (marblesLeftInPile<=3&&marblesLeftInPile>=2)
         {
-           numberOfMarblesTaken=Pile.getSize()-1;
+           numberOfMarblesTaken=marblesLeftInPile-1;
            
         }
         

@@ -20,7 +20,7 @@ public class HumanPlayer implements Player
         
        do
        {
-        input= JOptionPane.showInputDialog("How many marbles would you like to remove?");
+        input= JOptionPane.showInputDialog("How many marbles would you like to remove?\n\nCannot remove more than half of marbles in pile");
         scan = new Scanner (input);
         numberOfMarblesToTake=scan.nextInt();
        }while( (numberOfMarblesToTake==0) || (numberOfMarblesToTake>(marblesLeftInPile/2)) );
