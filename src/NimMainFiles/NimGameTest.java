@@ -8,8 +8,8 @@ public class NimGameTest
 {
     public static void main (String args[])
     {
-        Pile gamePile=new Pile();
-        System.out.println("The starting pile has "+gamePile.getSize()+" marbles");
+       
+
         
         HumanPlayer theHuman=new HumanPlayer();
         SmartComputer superComputer=new SmartComputer();
@@ -26,16 +26,50 @@ public class NimGameTest
          answer=scan.nextInt();
         }while((answer!=1)&&(answer!=2));
         
-        if(answer==1)
+        
+        int order;
+        String theInput;
+        Scanner scanOrder;
+        int firstOrSecond;
+        
+        theInput=JOptionPane.showInputDialog("Would you like to go first or second.\nType 1 or 2");
+        scanOrder=new Scanner(theInput);
+        firstOrSecond=scanOrder.nextInt();
+        
+        while(firstOrSecond!=1&&firstOrSecond!=2)
         {
-           Nim nimGame=new Nim(theHuman,dumbComputer,gamePile);
+            theInput=JOptionPane.showInputDialog("Please only type 1 or 2.\nWould you like to go first or second");
+            scanOrder=new Scanner(theInput);
+            firstOrSecond=scanOrder.nextInt();
+        }
+        
+        if(answer==1&&firstOrSecond==1)
+        {
+           Player[] thePlayers= {theHuman, dumbComputer};
+           Nim nimGame = new Nim (thePlayers);
+           
            System.out.println(nimGame.play());
         }
-        else
+        else if(answer==1&&firstOrSecond==2)
         {
-            Nim nimGame=new Nim(theHuman,superComputer,gamePile);
-            System.out.println(nimGame.play());
+            Player[] thePlayers= {dumbComputer, theHuman};
+            Nim nimGame = new Nim (thePlayers);
+            
+            System.out.println(nimGame.play()); 
         }
+        else if(answer==2&&firstOrSecond==1)
+        {
+            Player[] thePlayers= {theHuman, superComputer};
+            Nim nimGame = new Nim (thePlayers);
+            System.out.println(nimGame.play()); 
+        }
+         else if(answer==2&&firstOrSecond==2)
+        {
+             Player[] thePlayers= {superComputer, theHuman};
+             Nim nimGame = new Nim (thePlayers);
+             System.out.println(nimGame.play());    
+        }
+        
         
     }
 }

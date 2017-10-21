@@ -14,7 +14,9 @@ public class Pile
     
     public static void removeMarbles(int numberOfMarblesToRemove)
     {
+
         pileSize=pileSize-numberOfMarblesToRemove;
+
     }
     
     public static int getSize()

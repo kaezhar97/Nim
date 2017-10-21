@@ -3,14 +3,15 @@ package NimMainFiles;
 
 public class SmartComputer implements Player
 {
+    private int numberOfMarblesTaken;
     public SmartComputer()
     {
         
     }
     
-    public int move()
+    public int move(int marblesLeftInPile)
     {
-        int numberOfMarblesTaken=0;
+      
         
         if (Pile.getSize()<=100&&Pile.getSize()>=64)
         {
@@ -43,8 +44,11 @@ public class SmartComputer implements Player
            
         }
         
+      
         return numberOfMarblesTaken;
     }
+    
+   
     
     public String getName()
     {

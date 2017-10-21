@@ -1,5 +1,8 @@
 package NimMainFiles;
 
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+
 
 public class HumanPlayer implements Player
 {
@@ -10,15 +13,25 @@ public class HumanPlayer implements Player
         
     }
     
-    public int move()
+    public int move(int marblesLeftInPile)
     {
+        String input;
+        Scanner scan;
+        
+       do
+       {
+        input= JOptionPane.showInputDialog("How many marbles would you like to remove?");
+        scan = new Scanner (input);
+        numberOfMarblesToTake=scan.nextInt();
+       }while( (numberOfMarblesToTake==0) || (numberOfMarblesToTake>(marblesLeftInPile/2)) );
+      
+        
+        
         return numberOfMarblesToTake;
     }
     
-    public void setNumberOfMarblesToTake(int marbleNum)
-    {
-        numberOfMarblesToTake=marbleNum;
-    }
+   
+ 
     
     public String getName()
     {
