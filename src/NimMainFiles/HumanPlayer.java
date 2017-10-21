@@ -3,9 +3,21 @@ package NimMainFiles;
 
 public class HumanPlayer implements Player
 {
-    public int move(int numberOfMarblesTaken)
+    private int numberOfMarblesToTake;
+    
+    public HumanPlayer()
     {
-        return numberOfMarblesTaken;
+        
+    }
+    
+    public int move()
+    {
+        return numberOfMarblesToTake;
+    }
+    
+    public void setNumberOfMarblesToTake(int marbleNum)
+    {
+        numberOfMarblesToTake=marbleNum;
     }
     
     public String getName()

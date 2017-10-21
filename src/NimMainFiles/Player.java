@@ -2,6 +2,6 @@ package NimMainFiles;
 
 public interface Player 
 {
-   int move(int numberOfMarblesTaken);
+   int move();
    String getName();
 }

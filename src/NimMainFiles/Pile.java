@@ -12,6 +12,11 @@ public class Pile
         pileSize=pileGenerator.nextInt(91)+10; // Generates a random pile size between 10 and 100 inclusive
     }
     
+    public static void removeMarbles(int numberOfMarblesToRemove)
+    {
+        pileSize=pileSize-numberOfMarblesToRemove;
+    }
+    
     public static int getSize()
     {
         return pileSize;
