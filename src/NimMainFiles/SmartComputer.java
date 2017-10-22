@@ -28,8 +28,8 @@ public class SmartComputer implements Player
      * The move method of the smart computer will remove a number of marbles such that the remaining marbles in the pile is
      * equal to a power of two minus 1 (1, 3, 7, 15, 31, 63, etc).
      * 
-     * @param marblesLeftInPile
-     * @return 
+     * @param marblesLeftInPile marbles left in the pile.
+     * @return the number of marbles being removed from the pile by the smart computer.
      */
     public int move(int marblesLeftInPile)
     {
