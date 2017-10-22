@@ -1,14 +1,36 @@
+/*
+   File: SmartComputer.java
+   Purpose:
+       To simulate a real life smart computer player. The smart computer will use a winning strategy at all times.
+ */
+
 package NimMainFiles;
 
-
+/**
+ * The smart computer will use an algorithm to win at all times. The smart computer is invincible if it goes first during the game of Nim 
+ * unless the initial pile size is 15, 31, or 63.
+ * 
+ * @author Octavio Avila-Cardet
+ */
 public class SmartComputer implements Player
 {
-    private int numberOfMarblesTaken;
+    private int numberOfMarblesTaken; //Number of marbles that the smart computer has taken from the pile.
+    
+    /**
+     * Creates a smart computer.
+     */
     public SmartComputer()
     {
         
     }
     
+    /**
+     * The move method of the smart computer will remove a number of marbles such that the remaining marbles in the pile is
+     * equal to a power of two minus 1 (1, 3, 7, 15, 31, 63, etc).
+     * 
+     * @param marblesLeftInPile
+     * @return 
+     */
     public int move(int marblesLeftInPile)
     {
       
@@ -45,11 +67,20 @@ public class SmartComputer implements Player
         }
         
       
+        if (numberOfMarblesTaken>(marblesLeftInPile/2))
+        {
+            numberOfMarblesTaken--;
+        }
+        
         return numberOfMarblesTaken;
     }
     
    
-    
+    /**
+     * Gets this player's name.
+     * 
+     * @return the smart computer's name as a string.
+     */
     public String getName()
     {
         return "Smart computer";
