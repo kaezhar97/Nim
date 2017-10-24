@@ -25,16 +25,22 @@ public class NimGameTest
     */
     public static void main (String args[])
     {
-        HumanPlayer theHuman=new HumanPlayer(); // creates a human computer
-        SmartComputer superComputer=new SmartComputer(); // creates a super computer
-        StupidComputer dumbComputer=new StupidComputer(); // creates a dumb computer
-        
         String input;
         Scanner scan;
         String answer;
         String playAgain;
         
-        System.out.println("Welcome players to The Ancient and Honorable Game of Nim\n" +
+        input=JOptionPane.showInputDialog("What's your name?");
+        scan=new Scanner (input);
+        answer= scan.next();
+        
+        HumanPlayer theHuman=new HumanPlayer(answer); // creates a human computer
+        SmartComputer superComputer=new SmartComputer(); // creates a super computer
+        StupidComputer dumbComputer=new StupidComputer(); // creates a dumb computer
+        
+        
+        
+        System.out.println("Welcome, "+answer + ", to The Ancient and Honorable Game of Nim\n" +
 "\nHere are the rules:\nTwo players takes turns removing marbles from a pile. "
                 + "\nOn each turn, the player must remove at "
                 + "least one but no more than half of the remaining marbles. "

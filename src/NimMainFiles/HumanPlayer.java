@@ -18,13 +18,14 @@ import javax.swing.JOptionPane;
 public class HumanPlayer implements Player
 {
     private int numberOfMarblesToTake; //Number of marbles that the human will take from the pile.
+    private String name;
     
     /**
      * Creates a human player.
      */
-    public HumanPlayer()
+    public HumanPlayer(String name)
     {
-        
+      this.name=name;
     }
     
     /**
@@ -59,6 +60,6 @@ public class HumanPlayer implements Player
      */
     public String getName()
     {
-        return "Human player";
+        return this.name;
     }
 }

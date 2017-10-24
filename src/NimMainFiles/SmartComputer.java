@@ -33,8 +33,12 @@ public class SmartComputer implements Player
      */
     public int move(int marblesLeftInPile)
     {
-      
+      for (int i=marblesLeftInPile;i>0;i--)
+      {
+          
+      }
         
+          /*
         if (marblesLeftInPile<=100&&marblesLeftInPile>=64)
         {
            numberOfMarblesTaken=marblesLeftInPile-63;
@@ -72,6 +76,7 @@ public class SmartComputer implements Player
             numberOfMarblesTaken--;
         }
         
+          */
         return numberOfMarblesTaken;
     }
     

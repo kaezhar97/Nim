@@ -27,7 +27,7 @@ public class Pile
     /**
      * Removes a specified number of marbles from the pile.
      * 
-     * @param numberOfMarblesToRemove the number of marbles that is going to substracted from the pile.
+     * @param numberOfMarblesToRemove the number of marbles that is going to subtracted from the pile.
      */
     public void removeMarbles(int numberOfMarblesToRemove)
     {
